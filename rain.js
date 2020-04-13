@@ -1,10 +1,10 @@
 class Rain{
-    constructor(x, y){
+    constructor(x, y, width, height){
         var option = {
             frictionAir : 0.1,
             density : 0.1
         }
-        this.body = Bodies.rectangle(x, y, width, height, );
+        this.body = Bodies.rectangle(x, y, width, height, option);
         this.width = width;
         this.height = height;
         World.add(world,this.body);
@@ -17,8 +17,9 @@ class Rain{
     display(){
         var pos = this.body.position;
         rectMode(CENTER);
-        fill("blue");
+        fill("cyan");
+        noStroke();
         rect(pos.x,pos.y,this.width,this.height);
-        //this.fall();
+        this.fall();
     }
 }
